@@ -8,12 +8,10 @@ os.system("conan install . --output-folder=build --build=missing")
 
 #### Meson Build steps #####
 
-os.chdir("build")
-os.system("meson setup --native-file conan_meson_native.ini .. meson-src")
-os.system("meson compile -C meson-src")
+os.system("meson setup build --native-file build/conan_meson_native.ini")
+os.system("meson compile -C build")
 
-os.chdir("..")
-src = "build/meson-src/demo"
+src = "build/demo"
 dst = "demo"
 os.symlink(src,dst)
 
