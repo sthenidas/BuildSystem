@@ -1,0 +1,16 @@
+[project]
+name = 'Conan_Meson_Testing'
+version = '1.0'
+dependencies = [
+  "conan",
+  "meson",
+  "ninja",
+  "pkgconfig",
+  "cmake>3.17",
+]
+
+#[tool.uv]
+#no-build-isolation-package = ["cmake"]
+
+#[tool.uv.extra-build-dependencies]
+#  cmake = ["skbuild","setuptools"]

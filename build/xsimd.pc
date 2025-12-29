@@ -1,0 +1,7 @@
+prefix=/Users/nathan/.conan2/p/xsimd4b6da37e2a5f6/p
+includedir=${prefix}/include
+
+Name: xsimd
+Description: Conan package: xsimd
+Version: 13.2.0
+Cflags: -I"${includedir}" -flax-vector-conversions -fsigned-char

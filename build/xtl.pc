@@ -1,0 +1,7 @@
+prefix=/Users/nathan/.conan2/p/xtl70ceffba7bd53/p
+includedir=${prefix}/include
+
+Name: xtl
+Description: Conan package: xtl
+Version: 0.8.0
+Cflags: -I"${includedir}"

@@ -1,0 +1,8 @@
+prefix=/Users/nathan/.conan2/p/xtens3d98e743952c9/p
+includedir=${prefix}/include
+
+Name: xtensor
+Description: Conan package: xtensor
+Version: 0.26.0
+Cflags: -I"${includedir}" -DXTENSOR_USE_XSIMD
+Requires: xtl nlohmann_json xsimd
