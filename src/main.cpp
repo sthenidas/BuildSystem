@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <xtensor/containers/xarray.hpp>
 #include <xtensor/io/xio.hpp>
