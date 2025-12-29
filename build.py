@@ -3,7 +3,8 @@
 import os
 
 #### Conan Build steps ####
-
+#forcing this makes it overwrite previous profiles, not best practice
+os.system("conan profile detect --force")
 os.system("conan install . --output-folder=build --build=missing")
 
 #### Meson Build steps #####
