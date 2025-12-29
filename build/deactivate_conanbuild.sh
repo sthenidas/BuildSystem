@@ -1,1 +1,0 @@
-. "/Users/nathan/Development/Meson_Learning/build/deactivate_conanbuildenv-release-armv8.sh"
