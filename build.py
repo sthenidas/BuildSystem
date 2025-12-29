@@ -3,7 +3,7 @@
 import os
 
 #### Conan Build steps ####
-
+os.system("conan profile detect")
 os.system("conan install . --output-folder=build --build=missing")
 
 #### Meson Build steps #####
