@@ -13,6 +13,7 @@
 //   the backend itself (imgui_impl_vulkan.cpp), but should PROBABLY NOT be used by your own engine/app code.
 // Read comments in imgui_impl_vulkan.h.
 
+#include <iostream>
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_vulkan.h"
@@ -120,6 +121,7 @@ static void SetupVulkan(ImVector<const char*> instance_extensions)
 #ifdef VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME
         if (IsExtensionAvailable(properties, VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME))
         {
+            std::cout<<"Made it inside of this block"<<"\n";
             instance_extensions.push_back(VK_KHR_PORTABILITY_ENUMERATION_EXTENSION_NAME);
             create_info.flags |= VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
         }
@@ -377,6 +379,11 @@ int main(int, char**)
     ImVector<const char*> extensions;
     uint32_t extensions_count = 0;
     const char** glfw_extensions = glfwGetRequiredInstanceExtensions(&extensions_count);
+    if (!glfw_extensions){
+        std::cerr << "GLFW: Failed to get required Vulkan extensions" << std::endl;
+        std::cout<<glfw_extensions<<std::endl;
+        return -1;
+    }
     for (uint32_t i = 0; i < extensions_count; i++)
         extensions.push_back(glfw_extensions[i]);
     SetupVulkan(extensions);
@@ -549,4 +556,3 @@ int main(int, char**)
 
     return 0;
 }
-
